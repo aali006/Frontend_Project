@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driver Monitoring Alerts</title>
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      div {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      #alertsContainer {
+        margin-top: 20px;
+      }
+
+      div > div {
+        margin-bottom: 20px;
+      }
+
+      strong {
+        color: #e44d26; /* Use a color that matches your theme */
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Driver Monitoring Alerts</h1>
+
+      <!-- Search Inputs -->
+      <label for="searchText">Free Text Search:</label>
+      <input
+        type="text"
+        id="searchText"
+        placeholder="Search"
+        oninput="searchAlerts()"
+      />
+
+      <label for="searchField">Search Field:</label>
+      <select id="searchField">
+        <option value="all">All Fields</option>
+        <option value="vehicle_friendly_name">Vehicle Number</option>
+      </select>
+
+      <!-- Search by Vehicle Dropdown -->
+      <label for="searchVehicle">Search by Vehicle:</label>
+      <select id="searchVehicle" oninput="searchAlerts()">
+        <option value="">All Vehicles</option>
+        <!-- Options will be dynamically added here -->
+      </select>
+
+      <!-- Start Date Input -->
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" oninput="searchAlerts()" />
+
+      <!-- End Date Input -->
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" oninput="searchAlerts()" />
+
+      <!-- Alerts Container -->
+      <div id="alertsContainer">
+        <!-- Alerts will be dynamically added here -->
+      </div>
+    </div>
+
+    <!-- Include your JavaScript file -->
+    <script src="app.js"></script>
+  </body>
+</html>
